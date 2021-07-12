@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+    body {
+        background : url("https://wallpapercave.com/wp/wp4792934.jpg");
+        background-size: 100%;
+        font-family: "Roboto Mono", monospace;
+        text-shadow: 3px 3px 3px grey;
+    }
+    .c {
+        color : white;
+        text-align: center;
+    }
+    p {
+        color : white;
+        text-align: center;
+    }
+    audio {
+        margin-top : 0px;
+    }
+    div{
+        left : 38%;
+        top : 35%;
+        position : absolute;
+    }
+    video {
+        position : fixed;
+        width : 100%;
+        left : 0;
+        top : 0;
+    }
+
+
+    </style>
+
+
+
+    <title>Birthday Count</title>
+</head>
+<body>
+    <audio hidden autoplay loop>
+        <source src="https://github.com/Arbaniasfi18/Arbani-s-Repositories/raw/main/y2mate.com%20-%20Yahya%20%20keepyousafe.ogg" type="audio/ogg">
+        <source src="https://github.com/Arbaniasfi18/Arbani-s-Repositories/raw/main/y2mate.com%20-%20Yahya%20%20keepyousafe.mp3" type="audio/mpeg">
+        Your Browser Not Support Audio Please Update
+    </audio>
+
+    <video autoplay muted loop>
+        <source src="y2mate.com - No Copyright Video Copyright Free  Motion Graphics Background Animation Green Screen YouTube_1080p.mp4" type="video/mp4">
+        Your Browser Not Support Video Please Update
+    </video>
+
+    <div>
+        <h1 class="c">BirthDay Count Down</h1>
+        <p id="date"></p>
+        <!-- <p id="date1"></p> -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        function time(){
+            var a_p = "";
+            var date1 = new Date("Aug 18, 2021 00:00:00").getTime();
+            var date = new Date().getTime();
+            // var day = date.getDay();
+            // var hour = date.getHours();
+            // var min = date.getMinutes();
+            // var sec = date.getSeconds();
+
+            // if (hour == 0){
+                //     hour = 24;
+                // }
+                
+            // hour = checktime(hour);
+            // min = checktime(min);
+            // sec = checktime(sec);
+            
+            var distance = date1 - date; 
+            
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            if (hours < 12){
+                a_p = "PM";
+            }else {
+                a_p = "AM";
+            }
+            document.getElementById("date").innerHTML = days +"d "+ hours +"h "+ minutes +"m "+ seconds +"s "+ a_p;
+            
+            if (distance < 0){
+                document.getElementById("date").innerHTML = "Happy Birthday !!!"
+            }
+
+        }
+
+        setInterval(time, 1000);
+
+    </script>
+</body>
+</html>
+
