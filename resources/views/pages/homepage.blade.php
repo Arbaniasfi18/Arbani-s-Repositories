@@ -1,4 +1,5 @@
-<x-layout title="home">
-    <x-navbar />
+@extends('layouts.app')
+
+@section('content')
     <h1>HomePage</h1>
-</x-layout>
+@endsection

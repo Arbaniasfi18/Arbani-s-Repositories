@@ -1,4 +1,5 @@
-<x-layout title="grand event">
-    <x-navbar />
+@extends('layouts.app')
+
+@section('content')
     <h1>Grand Event</h1>
-</x-layout>
+@endsection

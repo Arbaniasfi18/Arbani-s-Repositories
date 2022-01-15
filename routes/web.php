@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EmailsController;
+use App\Mail\WelcomeMail;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,10 +26,10 @@ Route::get('/competitions', function () {
     return view('pages/competition/home');
 });
 
-Route::get('/sign-in', function () {
-    return view('pages/auth/sign-in');
-});
-
 Route::get('/grand-event', function () {
     return view('pages/grand-event');
 });
+
+Auth::routes(['verify' => true]);
+
+Route::get('/dashboard', [DashboardController::class, '__invoke'])->name('dashboard');

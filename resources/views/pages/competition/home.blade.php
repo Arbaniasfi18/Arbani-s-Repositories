@@ -1,4 +1,5 @@
-<x-layout title="competitions">
-    <x-navbar />
+@extends('layouts.app')
+
+@section('content')
     <h1>Competitions</h1>
-</x-layout>
+@endsection
