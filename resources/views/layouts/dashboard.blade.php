@@ -26,6 +26,7 @@
 <body>
     <div id="app">
         <main class="py-4">
+            <h2>ok</h2>
             @yield('content')
         </main>
     </div>
