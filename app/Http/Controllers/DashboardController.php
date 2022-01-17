@@ -25,10 +25,21 @@ class DashboardController extends Controller
         return view('pages/dashboard/home');
     }
 
+    // user
     public function profile(Request $request) {
         return view('pages/dashboard/profile');
     }
     public function competitions(Request $request) {
         return view('pages/dashboard/competitions');
+    }
+    // admin
+    public function user_management(Request $request) {
+        return view('admin/user-management');
+    }
+    public function competition_management(Request $request) {
+        return view('admin/competition-management');
+    }
+    public function team_management(Request $request) {
+        return view('admin/team-management');
     }
 }

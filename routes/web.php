@@ -32,8 +32,16 @@ Route::get('/grand-event', function () {
 
 Auth::routes(['verify' => true]);
 
+// user
 Route::get('/dashboard', [DashboardController::class, '__invoke'])->name('dashboard');
 
 Route::get('/dashboard/profile', [DashboardController::class, 'profile'])->name('dashboard.profile');
 
 Route::get('/dashboard/competitions', [DashboardController::class, 'competitions'])->name('dashboard.competitions');
+
+// admin
+Route::get('/dashboard/user-management', [DashboardController::class, 'user_management'])->name('dashboard.user_management');
+
+Route::get('/dashboard/competition-management', [DashboardController::class, 'competition_management'])->name('dashboard.competition_management');
+
+Route::get('/dashboard/team-management', [DashboardController::class, 'team_management'])->name('dashboard.team_management');

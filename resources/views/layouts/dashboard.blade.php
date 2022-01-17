@@ -41,7 +41,7 @@
         <div class="container">
             <!-- SIDEBAR -->
             <aside>
-                <div class="top">
+                <div class="top" style="cursor: pointer">
                     <div class="logo">
                         <img src="/img/cek.png" alt="" />
                         <h2>ITFEST <span class="danger">2022</span></h2>
@@ -58,6 +58,32 @@
                         <span class="material-icons-outlined">grid_view</span>
                         <h3>Dashboard</h3>
                     </a>
+                    @if(Auth::user()->isAdmin==1)
+                    <a
+                        href="/dashboard/user-management"
+                        class="{{ Request::is('dashboard/user-management') ? 'active' : '' }}"
+                    >
+                        <span class="material-icons-sharp">person_outline</span>
+                        <h3>Users</h3>
+                    </a>
+                    <a
+                        href="/dashboard/competition-management"
+                        class="{{ Request::is('dashboard/competition-management') ? 'active' : '' }}"
+                    >
+                        <span class="material-icons-outlined"
+                            >emoji_events</span
+                        >
+                        <h3>Competitions</h3>
+                    </a>
+                    <a
+                        href="/dashboard/team-management"
+                        class="{{ Request::is('dashboard/team-management') ? 'active' : '' }}"
+                    >
+                        <span class="material-icons-outlined">groups</span>
+                        <h3>Teams</h3>
+                    </a>
+
+                    @else
                     <a
                         href="/dashboard/profile"
                         class="{{ Request::is('dashboard/profile') ? 'active' : '' }}"
@@ -74,6 +100,8 @@
                         >
                         <h3>Competitions</h3>
                     </a>
+                    @endif
+
                     <a
                         class="sidebar-logout"
                         href="{{ route('logout') }}"
@@ -110,7 +138,7 @@
                             </p>
                             <small
                                 class="text-muted"
-                                >{{ Auth::user()->isAdmin == 1 ? 'admin' : '' }}</small
+                                >{{ Auth::user()->isAdmin == 1 ? 'admin' : Auth::user()->universitas }}</small
                             >
                         </div>
                         <div class="profile-photo">
@@ -126,6 +154,7 @@
         const sideMenu = document.querySelector("aside");
         const menuBtn = document.querySelector("#menu-btn");
         const closeBtn = document.querySelector("#close-btn");
+        const logo = document.querySelector(".top");
 
         menuBtn.addEventListener("click", () => {
             sideMenu.style.display = "block";
@@ -133,6 +162,10 @@
 
         closeBtn.addEventListener("click", () => {
             sideMenu.style.display = "none";
+        });
+
+        logo.addEventListener("click", () => {
+            document.location.href = "/";
         });
     </script>
     <script
