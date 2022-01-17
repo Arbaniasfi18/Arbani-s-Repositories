@@ -22,6 +22,13 @@ class DashboardController extends Controller
         if (Gate::allows('admin-only', auth()->user())) {
             return view('admin/dashboard');
         }
-        return view('pages/dashboard/dashboard');
+        return view('pages/dashboard/home');
+    }
+
+    public function profile(Request $request) {
+        return view('pages/dashboard/profile');
+    }
+    public function competitions(Request $request) {
+        return view('pages/dashboard/competitions');
     }
 }

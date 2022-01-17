@@ -33,3 +33,7 @@ Route::get('/grand-event', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/dashboard', [DashboardController::class, '__invoke'])->name('dashboard');
+
+Route::get('/dashboard/profile', [DashboardController::class, 'profile'])->name('dashboard.profile');
+
+Route::get('/dashboard/competitions', [DashboardController::class, 'competitions'])->name('dashboard.competitions');
