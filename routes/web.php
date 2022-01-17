@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CompetitionController;
 use App\Http\Controllers\EmailsController;
 use App\Mail\WelcomeMail;
 use Illuminate\Support\Facades\Auth;
@@ -22,9 +23,9 @@ Route::get('/', function () {
     return view('pages/homepage');
 });
 
-Route::get('/competitions', function () {
-    return view('pages/competition/home');
-});
+Route::get('/competitions', [CompetitionController::class, 'index'])->name('competitions');
+Route::get('/competitions/detail', [CompetitionController::class, 'detail'])->name('competition-detail');
+// Route::get('/competitions/{slug}', [CompetitionController::class, 'detail'])->name('competition-detail');
 
 Route::get('/grand-event', function () {
     return view('pages/grand-event');
