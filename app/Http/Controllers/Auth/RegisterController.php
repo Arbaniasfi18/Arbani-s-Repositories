@@ -74,7 +74,7 @@ class RegisterController extends Controller
             'no_telp' => $data['no_telp'],
             'tanggal_lahir' => $data['tanggal_lahir'],
             'no_identitas' => $data['no_identitas'],
-            'universitas' => $data['no_identitas'],
+            'universitas' => $data['universitas'],
             'password' => Hash::make($data['password']),
             'isAdmin' => 0
         ]);

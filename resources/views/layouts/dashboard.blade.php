@@ -11,6 +11,7 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <!-- Fonts -->
         <link
@@ -41,7 +42,7 @@
         <div class="container-css">
             <!-- SIDEBAR -->
             <aside>
-                <div class="top" style="cursor: pointer">
+                <div  class="top" style="cursor: pointer">
                     <div class="logo">
                         <img src="/img/cek.png" alt="" />
                         <h2>ITFEST <span class="danger">2022</span></h2>

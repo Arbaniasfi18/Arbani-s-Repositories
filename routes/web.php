@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CompetitionController;
 use App\Http\Controllers\EmailsController;
+use App\Http\Controllers\Profile\ProfileController;
 use App\Mail\WelcomeMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -39,6 +40,20 @@ Route::get('/dashboard', [DashboardController::class, '__invoke'])->name('dashbo
 Route::get('/dashboard/profile', [DashboardController::class, 'profile'])->name('dashboard.profile');
 
 Route::get('/dashboard/competitions', [DashboardController::class, 'competitions'])->name('dashboard.competitions');
+
+// ubah profile 
+
+Route::post('/change-profile', [ProfileController::class, 'change_profile']);
+
+Route::post('/change-password', [ProfileController::class, 'change_password']);
+
+Route::post('/change-email', [ProfileController::class, 'change_email']);
+
+Route::post('/change-image', [ProfileController::class, 'change_image']);
+
+
+
+
 
 // admin
 Route::get('/dashboard/user-management', [DashboardController::class, 'user_management'])->name('dashboard.user_management');
