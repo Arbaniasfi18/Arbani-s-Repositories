@@ -27,6 +27,9 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+
+        {{-- competition-page --}}
+        <link href="{{ asset('css/competition.css') }}" rel="stylesheet" />
     </head>
     <body>
         <div id="app">
