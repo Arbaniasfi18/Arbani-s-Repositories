@@ -38,7 +38,7 @@
     </head>
 
     <body>
-        <div class="container">
+        <div class="container-css">
             <!-- SIDEBAR -->
             <aside>
                 <div class="top" style="cursor: pointer">
@@ -146,6 +146,47 @@
                         </div>
                     </div>
                 </div>
+                <div class="recent-updates">
+                    <h2>Recent Updates</h2>
+                    <div class="updates">
+                        <div class="update">
+                            <div class="icons">
+                                <span class="material-icons-outlined">
+                                    priority_high
+                                </span>
+                            </div>
+                            <div class="message">
+                                <p>
+                                    Pendaftaran <b>E-Sport</b> akan ditutup
+                                    segera
+                                </p>
+                            </div>
+                        </div>
+                        <div class="update">
+                            <div class="icons">
+                                <span class="material-icons-outlined">
+                                    priority_high
+                                </span>
+                            </div>
+                            <div class="message">
+                                <p>
+                                    Pendaftaran <b>E-Sport</b> akan ditutup
+                                    segera
+                                </p>
+                            </div>
+                        </div>
+                        <div class="update">
+                            <div class="icons">
+                                <span class="material-icons-outlined">
+                                    low_priority
+                                </span>
+                            </div>
+                            <div class="message">
+                                <p>Pendaftaran <b>E-Sport</b> telah dibuka</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- END OF NOTIFICATION -->
         </div>
@@ -154,7 +195,7 @@
         const sideMenu = document.querySelector("aside");
         const menuBtn = document.querySelector("#menu-btn");
         const closeBtn = document.querySelector("#close-btn");
-        const logo = document.querySelector(".top");
+        const logo = document.querySelector(".logo");
 
         menuBtn.addEventListener("click", () => {
             sideMenu.style.display = "block";
